@@ -1,4 +1,5 @@
 
+
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -7,7 +8,7 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).click(function() {
+$(document).delay(800).click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
@@ -42,8 +43,7 @@ function checkAnswer(currentLevel) {
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-
-      startOver();
+      setTimeout(startOver,1000);
     }
 }
 
@@ -77,3 +77,4 @@ function startOver() {
   gamePattern = [];
   started = false;
 }
+
